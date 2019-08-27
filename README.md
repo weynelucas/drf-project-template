@@ -27,10 +27,10 @@ All available settings with their respective example values are:
 
 ```
 # Core settings
-SECRET_KEY=10$)=r1sb!uuf6(b6-_!ogs=*73)(roh^h2!4f1!l8%@-kt4bh
 DEBUG=false
-ALLOWED_HOSTS=localhost,127.0.0.1,example.com
 PROXY_SCRIPT_NAME=api
+ALLOWED_HOSTS=localhost,127.0.0.1,example.com
+SECRET_KEY=10$)=r1sb!uuf6(b6-_!ogs=*73)(roh^h2!4f1!l8%@-kt4bh
 
 # Database
 DB_ENGINE=postgres_psycopg2 # Allowed options: sqlite3, mysql, postgresql, postgresql_psycopg2, oracle
