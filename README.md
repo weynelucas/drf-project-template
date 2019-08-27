@@ -26,9 +26,9 @@ $ pip install -r requirements.txt
 ```
 [project_name]
 ├── environments
-│   ├── development.env
-│   ├── production.env
-│   └── staging.env
+│   ├── environment.dev.env
+│   ├── environment.prod.env
+│   └── environment.stage.env
 ├── project
 │   ├── apps
 │   │   └── __init__.py
