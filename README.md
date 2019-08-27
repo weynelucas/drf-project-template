@@ -21,7 +21,28 @@ $ cd project_name
 $ pip install -r requirements.txt
 ```
 
-# Project structure
+# Project structure                                                     
+
+```
+[project_name]
+├── LICENSE
+├── project
+│   ├── apps
+│   │   └── __init__.py
+│   ├── config
+│   │   ├── __init__.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   ├── core
+│   ├── manage.py
+│   ├── static
+│   └── templates
+│       └── rest_framework
+│           └── api.html
+├── README.md
+└── requirements.txt
+```
 
 The `project/` directory is the root of the actual Django project. All code files used by your application are inside this directory
 
