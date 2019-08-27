@@ -50,3 +50,29 @@ CORS_ALLOW_ORIGIN_ALL=false
 CORS_ORIGIN_WHITELIST=https://example.com,https://sub.example.com
 CORS_ORIGIN_REGEX_WHITELIST=^https://\w+\.example\.com$
 ```
+
+# Project structure
+
+```
+├── LICENSE
+├── project
+│   ├── apps
+│   │   └── __init__.py
+│   ├── config
+│   │   ├── __init__.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   ├── core
+│   │   ├── context_processors.py
+│   │   ├── __init__.py
+│   │   ├── loader.py
+│   │   └── middleware.py
+│   ├── manage.py
+│   ├── static
+│   └── templates
+│       └── rest_framework
+│           └── api.html
+├── README.md
+└── requirements.txt
+```

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 from smart_getenv import getenv
+from corsheaders.defaults import default_headers, default_methods
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -152,6 +153,8 @@ CORS_ORIGIN_REGEX_WHITELIST = [
     '%r' % value
     for value in getenv('CORS_ORIGIN_REGEX_WHITELIST', type=list, default=[])
 ]
+CORS_ALLOW_HEADERS = getenv('CORS_ALLOW_HEADERS', type=list, default=list(default_headers))
+CORS_ALLOW_METHODS = getenv('CORS_ALLOW_METHODS', type=list, default=list(default_methods))
 
 # Django REST framework
 # http://www.django-rest-framework.org/api-guide/settings/
