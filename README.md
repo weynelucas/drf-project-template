@@ -48,5 +48,5 @@ STATIC_ROOT=/www/static/
 # CORS
 CORS_ALLOW_ORIGIN_ALL=false
 CORS_ORIGIN_WHITELIST=https://example.com,https://sub.example.com
-CORS_ORIGIN_REGEX_WHITELIST='https://\w+\.example\.com$
+CORS_ORIGIN_REGEX_WHITELIST=^https://\w+\.example\.com$
 ```
