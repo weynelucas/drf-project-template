@@ -1,0 +1,13 @@
+{% extends "rest_framework/base.html" %}
+{% load static %}
+
+{% block title %}
+{% if name %}{{ name }} – {% endif %}{{ APP_NAME }}
+{% endblock %}
+
+
+{% block branding %}
+<a class="navbar-brand" rel="nofollow" href="/">
+  {{ APP_NAME }} <small>{{ APP_VERSION }}</small>
+</a>
+{% endblock  %}
