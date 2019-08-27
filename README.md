@@ -8,7 +8,7 @@ A project template with common setups to start projects with Django + Django RES
 -  Environment variables loading with [django-dotenv](https://github.com/jpadilla/django-dotenv)
 -  Generating documentation from OpenAPI schemas with [drf-yasg](https://github.com/axnsan12/drf-yasg/)
 -  CORS support with [django-cors-headers](https://github.com/adamchainz/django-cors-headers)
--  Exposing versioning information
+-  Exposing application information over [Browseable API](https://www.django-rest-framework.org/topics/browsable-api/)
 
 # Installation
 
