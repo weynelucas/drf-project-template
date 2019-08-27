@@ -21,58 +21,14 @@ $ cd project_name
 $ pip install -r requirements.txt
 ```
 
-# Environment variables
-
-All available settings with their respective example values are:
-
-```
-# Core settings
-DEBUG=false
-PROXY_SCRIPT_NAME=api
-ALLOWED_HOSTS=localhost,127.0.0.1,example.com
-SECRET_KEY=10$)=r1sb!uuf6(b6-_!ogs=*73)(roh^h2!4f1!l8%@-kt4bh
-
-# Database
-DB_ENGINE=postgres_psycopg2 # Allowed options: sqlite3, mysql, postgresql, postgresql_psycopg2, oracle
-DB_NAME=database_name
-DB_HOST=localhost
-DB_PORT=27017
-DB_USER=postgres
-DB_PASSWORD=postgres
-
-# Static files
-STATIC_PATH=/static/
-STATIC_URL=http://static.example.com/ # If not provided, value will be set to PROXY_SCRIPT_NAME + STATIC_PATH
-STATIC_ROOT=/www/static/
-
-# CORS
-CORS_ALLOW_ORIGIN_ALL=false
-CORS_ORIGIN_WHITELIST=https://example.com,https://sub.example.com
-CORS_ORIGIN_REGEX_WHITELIST=^https://\w+\.example\.com$
-```
-
 # Project structure
 
-```
-├── LICENSE
-├── project
-│   ├── apps
-│   │   └── __init__.py
-│   ├── config
-│   │   ├── __init__.py
-│   │   ├── settings.py
-│   │   ├── urls.py
-│   │   └── wsgi.py
-│   ├── core
-│   │   ├── context_processors.py
-│   │   ├── __init__.py
-│   │   ├── loader.py
-│   │   └── middleware.py
-│   ├── manage.py
-│   ├── static
-│   └── templates
-│       └── rest_framework
-│           └── api.html
-├── README.md
-└── requirements.txt
-```
+The `project/` directory is the root of the actual Django project. All code files used by your application are inside this directory
+
+| File or directory       | Purpose       | 
+| ----------------------- | ------------- | 
+| `config/`               | The configuration root of the project, where project-wide settings, `urls.py`, and `wsgi.py` modules are placed        | 
+| `apps/`                 | Where you put your custom applications. When create your application from command line, remember to run the `startapp` command inside this directory| 
+| `core/`                 | Where you put your generic solutions (helpers, views, middlewares, etc.) for common problems in a Django web application. If your code solve a common problem for any Django project, you should placed it here  |
+| `static/`               | Non-user-generated static media assets including CSS, JavaScript, and images. |
+| `templates/`            | Where you put your site-wide Django templates.    |
