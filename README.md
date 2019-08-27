@@ -25,7 +25,10 @@ $ pip install -r requirements.txt
 
 ```
 [project_name]
-├── LICENSE
+├── environments
+│   ├── development.env
+│   ├── production.env
+│   └── staging.env
 ├── project
 │   ├── apps
 │   │   └── __init__.py
