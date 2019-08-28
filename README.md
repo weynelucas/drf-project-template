@@ -35,8 +35,6 @@ APP_DESCRIPTION = 'Your project description'
 # Settings
 You can setting your application with envinronment variables. Create a `.env` file inside the `project/` directory and set your environment variables, most variables names refer to [Django settings](https://docs.djangoproject.com/en/2.2/ref/settings/). 
 
-Inside `environments/` directory are samples of `.env` files for development, stage and production (replace them with your own configuration)
-
 ## Core settings
 
 | Variable        | Description                                                                          | Default   |
@@ -110,6 +108,9 @@ DB_PASSWORD=a_password
 
 ```
 [project_name]
+├── docker
+│   ├── docker-compose.dev.yml
+│   └── Dockerfile
 ├── environments
 │   ├── environment.dev.env
 │   ├── environment.prod.env
@@ -131,6 +132,10 @@ DB_PASSWORD=a_password
 ├── README.md
 └── requirements.txt
 ```
+
+The `docker/` directory is where are the configuration files needed to run the application with docker.
+
+The `environments/` contains `.env` samples for development, stage and production environments
 
 The `project/` directory is the root of the actual Django project. All code files used by your application are inside this directory
 
