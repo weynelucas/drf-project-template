@@ -135,7 +135,7 @@ DB_PASSWORD=a_password
 
 The `docker/` directory is where are the configuration files needed to run the application with docker.
 
-The `environments/` contains `.env` samples for development, stage and production environments
+The `environments/` contains `.env` samples for development, stage and production environments.
 
 The `project/` directory is the root of the actual Django project. All code files used by your application are inside this directory
 
