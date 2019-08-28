@@ -21,6 +21,26 @@ $ cd project_name
 $ pip install -r requirements.txt
 ```
 
+# Settings
+You can setting your application with envinronment variables. Most variables names refer to [Django settings](https://docs.djangoproject.com/en/2.2/ref/settings/).
+
+## Core settings
+
+| Variable        | Description                                                                          | Default   |
+| --------------- | ------------------------------------------------------------------------------------ | :-------: |
+| `DEBUG`         | Turns on/off debug mode. Never deploy a site into production with `DEBUG` turned on. | `true`    |
+| `ALLOWED_HOSTS` | List, splited by comma, of host/domain that your application can serve               | `*`       |
+| `PROXY_SCRIPT_NAME` | If the app is running behind a proxy, this variable must be set with the proxy path | -      |
+
+
+#### Example
+```
+DEBUG=True
+ALLOWED_HOSTS=www.example.com,.subdomain.com
+PROXY_SCRIPT_NAME=/api
+```
+
+
 # Project structure                                                     
 
 ```
