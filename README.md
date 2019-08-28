@@ -21,15 +21,28 @@ $ cd project_name
 $ pip install -r requirements.txt
 ```
 
+# Describing your application
+At the end of the `settings.py` you can describe your aplication (name, description and release version). Theese informations will be displayed inside documentation (Swagger and Redoc) and inside the navigation bar of the Browseable API 
+
+```python
+# settings.py
+
+APP_VERSION = '1.0.0'
+APP_NAME = 'Your project name'
+APP_DESCRIPTION = 'Your project description'
+```
+
 # Settings
-You can setting your application with envinronment variables. Most variables names refer to [Django settings](https://docs.djangoproject.com/en/2.2/ref/settings/).
+You can setting your application with envinronment variables. Create a `.env` file inside the `project/` directory and set your environment variables, most variables names refer to [Django settings](https://docs.djangoproject.com/en/2.2/ref/settings/). 
+
+Inside `environments/` directory are samples of `.env` files for development, stage and production (replace them with your own configuration)
 
 ## Core settings
 
 | Variable        | Description                                                                          | Default   |
 | --------------- | ------------------------------------------------------------------------------------ | :-------: |
 | `DEBUG`         | Turns on/off debug mode. Never deploy a site into production with `DEBUG` turned on  | `true`    |
-| `ALLOWED_HOSTS` | List, splited by comma, of host/domain that your application can serve               | `*`       |
+| `ALLOWED_HOSTS` | List, splitted by comma, of host/domain that your application can serve               | `*`       |
 | `PROXY_SCRIPT_NAME` | If the app is running behind a proxy, this variable must be set with the proxy path | -      |
 
 
@@ -61,11 +74,11 @@ Depending on your `DB_ENGINE` variable you should install another package like `
 ```
 # PostgreSQL settings
 DB_ENGINE=postgresql_pyscopg2
-DB_NAME=db
+DB_NAME=database
 DB_HOST=localhost
 DB_PORT=27017
-DB_USER=user
-DB_PASSWORD=pass
+DB_USER=a_user
+DB_PASSWORD=a_password
 
 # Oracle settings (connect using SID)
 DB_ENGINE=oracle
