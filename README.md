@@ -35,7 +35,7 @@ APP_DESCRIPTION = 'Your project description'
 # Settings
 You can setting your application with envinronment variables. Create a `.env` file inside the `project/` directory and set your environment variables, most variables names refer to [Django settings](https://docs.djangoproject.com/en/2.2/ref/settings/). 
 
-Inside `environments/` directory are samples of .env files for development, stage and production (replace them with your own configuration)
+Inside `environments/` directory are samples of `.env` files for development, stage and production (replace them with your own configuration)
 
 ## Core settings
 
