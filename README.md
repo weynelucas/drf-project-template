@@ -21,6 +21,78 @@ $ cd project_name
 $ pip install -r requirements.txt
 ```
 
+# Settings
+You can setting your application with envinronment variables. Most variables names refer to [Django settings](https://docs.djangoproject.com/en/2.2/ref/settings/).
+
+## Core settings
+
+| Variable        | Description                                                                          | Default   |
+| --------------- | ------------------------------------------------------------------------------------ | :-------: |
+| `DEBUG`         | Turns on/off debug mode. Never deploy a site into production with `DEBUG` turned on  | `true`    |
+| `ALLOWED_HOSTS` | List, splited by comma, of host/domain that your application can serve               | `*`       |
+| `PROXY_SCRIPT_NAME` | If the app is running behind a proxy, this variable must be set with the proxy path | -      |
+
+
+#### Example
+```
+DEBUG=True
+ALLOWED_HOSTS=www.example.com,.subdomain.com
+PROXY_SCRIPT_NAME=/api
+```
+
+## Database settings
+To know how configure databases in a Django application, see the [documentation](https://docs.djangoproject.com/en/2.2/ref/databases/)
+
+
+| Variable         | Description                                                                          | Default     |
+| ---------------  | ------------------------------------------------------------------------------------ | :---------: |
+| `DB_ENGINE`      | Database backend to use. Options are: `mysql`, `oracle`, `postgresql`, `postgresql_psycopg2`,  `sqlite3`         | `sqlite3`    |
+| `DB_NAME`        | The name of database to use                                                          | `db.sqlite3`|
+| `DB_HOST`        | Which host to use when connecting to the database                                    | -           |
+| `DB_PORT`        | The port to use when connecting to the database                                      | -           |
+| `DB_USER`        | The username to use when connecting to the database                                  | -           |
+| `DB_PASSWORD`    | The password to use when connecting to the database                                  | -           |
+| `DB_CONN_MAX_AGE`| The lifetime of a database connection, in seconds                                    | `0`         |
+
+Depending on your `DB_ENGINE` variable you should install another package like `psycopg2` or `cx_Oracle` for PostgreSQL and Oracle databases, respectively.
+
+#### Example
+
+```
+# PostgreSQL settings
+DB_ENGINE=postgresql_pyscopg2
+DB_NAME=db
+DB_HOST=localhost
+DB_PORT=27017
+DB_USER=user
+DB_PASSWORD=pass
+
+# Oracle settings (connect using SID)
+DB_ENGINE=oracle
+DB_NAME=xe
+DB_HOST=dbprod01ned.mycompany.com
+DB_PORT=1540
+DB_USER=a_user
+DB_PASSWORD=a_password
+
+# Oracle settings (connect using full DSN string)
+DB_ENGINE=oracle
+DB_NAME=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orclpdb1)))
+DB_HOST=
+DB_PORT=
+DB_USER=a_user
+DB_PASSWORD=a_password
+
+# Oracle settings (connect using Easy Connect string)
+DB_ENGINE=oracle
+DB_NAME=localhost:1521/orclpdb1
+DB_HOST=
+DB_PORT=
+DB_USER=a_user
+DB_PASSWORD=a_password
+```
+
+
 # Project structure                                                     
 
 ```
