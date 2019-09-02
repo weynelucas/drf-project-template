@@ -1,10 +1,8 @@
 {
-  // Editor
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
   },
-  // Python
   "python.pythonPath": "python",
   "python.linting.enabled": true,
   "python.linting.lintOnSave": true,
