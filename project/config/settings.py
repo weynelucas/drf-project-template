@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES_ENGINE_MAP = {
     'mysql': 'django.db.backends.mysql',
     'oracle': 'django.db.backends.oracle',
-    'postgresql': 'django.db.backends.oracle',
+    'postgresql': 'django.db.backends.postgresql',
     'postgresql_psycopg2': 'django.db.backends.postgresql_pycopg2',
     'sqlite3': 'django.db.backends.sqlite3',
 }
