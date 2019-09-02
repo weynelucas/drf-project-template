@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/
 """
 import os
 
-from smart_getenv import getenv
 from corsheaders.defaults import default_headers, default_methods
+from smart_getenv import getenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,9 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/{{ docs_version }}/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv(
-    'SECRET_KEY', '{{ secret_key }}'
-)
+SECRET_KEY = os.getenv('SECRET_KEY', '{{ secret_key }}')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = getenv('DEBUG', type=bool, default=True)
@@ -106,7 +104,7 @@ DATABASES = {
         'PASSWORD': os.getenv('DB_PASSWORD'),
         'HOST': os.getenv('DB_HOST'),
         'PORT': os.getenv('DB_PORT'),
-        'CONN_MAX_AGE': getenv('DB_CONN_MAX_AGE', type=int, default=0)
+        'CONN_MAX_AGE': getenv('DB_CONN_MAX_AGE', type=int, default=0),
     }
 }
 
@@ -154,8 +152,12 @@ CORS_ORIGIN_REGEX_WHITELIST = [
     '%r' % value
     for value in getenv('CORS_ORIGIN_REGEX_WHITELIST', type=list, default=[])
 ]
-CORS_ALLOW_HEADERS = getenv('CORS_ALLOW_HEADERS', type=list, default=list(default_headers))
-CORS_ALLOW_METHODS = getenv('CORS_ALLOW_METHODS', type=list, default=list(default_methods))
+CORS_ALLOW_HEADERS = getenv(
+    'CORS_ALLOW_HEADERS', type=list, default=list(default_headers)
+)
+CORS_ALLOW_METHODS = getenv(
+    'CORS_ALLOW_METHODS', type=list, default=list(default_methods)
+)
 
 # Django REST framework
 # http://www.django-rest-framework.org/api-guide/settings/
@@ -171,6 +173,4 @@ REST_FRAMEWORK = {
 
 APP_VERSION = '1.0.0'
 APP_NAME = '{{ project_name }}'
-APP_DESCRIPTION = (
-    'A RESTfull API for project {{ project_name }}'
-)
+APP_DESCRIPTION = 'A RESTfull API for project {{ project_name }}'
