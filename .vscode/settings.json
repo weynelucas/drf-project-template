@@ -13,7 +13,6 @@
     "--load-plugins",
     "pylint_django"
   ],
-  "python.sortImports.args": [],
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": [
     "--skip-string-normalization"
