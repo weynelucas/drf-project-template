@@ -27,7 +27,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', '{{ secret_key }}')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = getenv('DEBUG', type=bool, default=True)
 
-ALLOWED_HOSTS = getenv('DEBUG', type=list, default=['*'])
+ALLOWED_HOSTS = getenv('ALLOWED_HOSTS', type=list, default=['*'])
 
 # If the app is running behind a proxy, this variable must be set with the proxy path
 # See https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#force-script-name
