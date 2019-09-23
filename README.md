@@ -41,7 +41,7 @@ $ cd project/apps
 $ python ../manage.py startapp pools
 ```
 
-After create the app folder, go to the `AppConfig` subclass (inside `apps.py`) and provide a proper name (dotted path to the module) to your application:
+After create the app folder, go to the `AppConfig` subclass (inside `apps.py`) and provide a proper name, wich is a dotted path to the application module:
 
 ```python
 from django.apps import AppConfig
@@ -58,7 +58,7 @@ Inside `__init__.py` file inside your module, set the `default_app_config` varia
 default_app_config = 'apps.pools.apps.PoolsConfig'
 ```
 
-Finnaly, install your app using the dotted path to their module
+Finnaly, install your app using the configured dotted path:
 
 ```python
 # settings.py
