@@ -34,7 +34,7 @@ APP_DESCRIPTION = 'Your project description'
 
 # Configuring applications
 
-This project template recommends Django apps to be placed inside `apps/` directory. To work with this configuration you need first to run the `startapp`command inside this directory:
+This project template highly recommends Django apps to be placed inside `apps/` directory. To work with this configuration you need first to run the `startapp`command inside this directory:
 
 ```bash
 $ cd project/apps
