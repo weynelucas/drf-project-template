@@ -32,6 +32,43 @@ APP_NAME = 'Your project name'
 APP_DESCRIPTION = 'Your project description'
 ```
 
+# Configuring applications
+
+This project template recommends Django apps to be placed inside `apps/` directory. To work with this configuration you need first to run the `startapp`command inside this directory:
+
+```bash
+$ cd project/apps
+$ python ../manage.py startapp pools
+```
+
+After create the app folder, go to the `AppConfig` subclass (inside `apps.py`) and provide a proper name (dotted path to the module) to your application:
+
+```python
+from django.apps import AppConfig
+
+
+class PoolsConfig(AppConfig):
+    name = 'apps.pools'
+    
+```
+
+Inside `__init__.py` file inside your module, set the `default_app_config` variable with the dotted path to your `AppConfig` subclass:
+
+```python
+default_app_config = 'apps.pools.apps.PoolsConfig'
+```
+
+Finnaly, install your app using the dotted path to their module
+
+```python
+# settings.py
+
+INSTALLED_APPS = [
+  ...
+  'apps.pools',
+]
+```
+
 # Settings
 You can setting your application with envinronment variables. Create a `.env` file inside the `project/` directory and set your environment variables, most variables names refer to [Django settings](https://docs.djangoproject.com/en/2.2/ref/settings/). 
 
